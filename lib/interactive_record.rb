@@ -64,7 +64,7 @@ class InteractiveRecord
     sql = <<-SQL
     SELECT * FROM #{table_name} WHERE #{hash.keys[0].to_s} = "hash.values[0].to_s"
     SQL
-
+binding.pry
     DB[:conn].execute(sql)
   end
 
