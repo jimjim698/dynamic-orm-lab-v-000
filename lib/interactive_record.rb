@@ -60,7 +60,12 @@ class InteractiveRecord
     DB[:conn].execute(sql,name)
   end
 
-  def self.find_by(name)
+  def self.find_by(hash)
+    sql = <<-SQL 
+    SELECT * FROM #{table_name} WHERE #{hash.keys} = ?
+    SQL 
+
+    
   end
 
 end
